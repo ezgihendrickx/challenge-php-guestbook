@@ -1,13 +1,23 @@
+body {
+  margin: 0px;
+}
 input {
   color: lightgray;
   background-color: lightblue;
+  width: 500px;
 }
 #date {
   background-color: lightblue;
   width: 170px;
-  padding-left: 5px;
+  margin: 10px;
 }
 
 input[type="submit"] {
-  background-color: lightblue;
+  background-color: blue;
+  color: whitesmoke;
+  width: 100px;
+}
+
+footer {
+  margin: 0px;
 }
