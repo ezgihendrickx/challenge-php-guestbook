@@ -4,13 +4,17 @@
 <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
     <title>Guest Book</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+
 
 </head>
 
 <body>
+
 
     <form action="#" method="POST">
         <code>
@@ -21,28 +25,32 @@
 
             date_default_timezone_set("Europe/Brussels");
             date("d-m-Y H:i:s", time());
-            echo date("d-m-Y H:i:s", time());
+            $currentDate = date("d-m-Y H:i:s", time());
+            echo $currentDate;
             "<br>";
             ?>
 
         </div>
 
-        Content: <input type="text" name="content" value="comments here" /><br>
-        Author name: <input type="text" name="name" value="name please" /> <br>
-        <input type="submit" name="submit" value="SUBMIT">
+        Content: <input type="text" name="content" placeholder="Your comments here" /><br>
+        Author name: <input type="text" name="name" placeholder="Name please" /> <br>
+        <input type="submit" name="submit" id="submit" value="SUBMIT">
+        <?php
+        require_once 'footer.html';
+        ?>
 
 
     </form>
     <hr>
 
     <?php
-    require_once 'footer.html';
-
 
     if (isset($_POST["submit"])) {
-        echo 'File';
+        // echo 'File';
+
+        // $currentDate->format('d-m-Y H:i');
         //$myfile = fopen("comments.html", "a") or die("there is an error");
-        $writeInFile = "<b>content:</b>" . $_POST['content'] . "<br>" . "<b>name:</b>" . $_POST['name'] . "<br>";
+        $writeInFile = "<b>content:</b>" . $_POST['content'] . "<br>" . "<b>name:</b>" . $_POST['name'] . "<br>" . $currentDate . "<br>" . "<hr>";
         //$writeInFile1 = "<b>name:</b>" . $_POST['name'] . "<br>";
         // fwrite($myfile, $writeInFile);
         // fwrite($myfile, $writeInFile1);
@@ -52,10 +60,11 @@
         // echo 'File';
 
         //include("comments.html");
+
     }
     include("comments.html");
 
-
+    // var_dump($writeInFile);
 
     ?>
 </body>

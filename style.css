@@ -1,8 +1,13 @@
 input {
   color: lightgray;
+  background-color: lightblue;
 }
 #date {
   background-color: lightblue;
   width: 170px;
   padding-left: 5px;
+}
+
+input[type="submit"] {
+  background-color: lightblue;
 }
