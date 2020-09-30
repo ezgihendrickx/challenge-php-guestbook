@@ -29,7 +29,7 @@
 
         Content: <input type="text" name="content" value="comments here" /><br>
         Author name: <input type="text" name="name" value="name please" /> <br>
-        <input type="submit" value="SUBMIT">
+        <input type="submit" name="submit" value="SUBMIT">
 
 
     </form>
@@ -39,19 +39,22 @@
     require_once 'footer.html';
 
 
-    if (isset($_POST["content"]) || isset($_POST["name"])) {
-        $myfile = fopen("comments.html", "a") or die("there is an error");
-        $writeInFile = "<b>content:</b>" . $_POST['content'] . "<br>";
-        $writeInFile1 = "<b>name:</b>" . $_POST['name'] . "<br>";
-        fwrite($myfile, $writeInFile);
-        fwrite($myfile, $writeInFile1);
-        fclose($myfile);
+    if (isset($_POST["submit"])) {
+        echo 'File';
+        //$myfile = fopen("comments.html", "a") or die("there is an error");
+        $writeInFile = "<b>content:</b>" . $_POST['content'] . "<br>" . "<b>name:</b>" . $_POST['name'] . "<br>";
+        //$writeInFile1 = "<b>name:</b>" . $_POST['name'] . "<br>";
+        // fwrite($myfile, $writeInFile);
+        // fwrite($myfile, $writeInFile1);
+        // fclose($myfile);
+        $writeInFile .= file_get_contents('comments.html');
+        file_put_contents('comments.html', $writeInFile);
+        // echo 'File';
 
-
-        include("comments.html");
-    } else {
-        include("comments.html");
+        //include("comments.html");
     }
+    include("comments.html");
+
 
 
     ?>
