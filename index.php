@@ -37,7 +37,8 @@
         <input type="submit" name="submit" id="submit" value="SUBMIT">
         <?php
         require_once 'footer.html';
-        require_once 'database.php';
+        // require_once 'database.php';
+        require_once 'comments.php';
         ?>
 
 
@@ -45,7 +46,6 @@
     <hr>
 
     <?php
-
     if (isset($_POST["submit"])) {
         // echo 'File';
 
@@ -56,14 +56,14 @@
         // fwrite($myfile, $writeInFile);
         // fwrite($myfile, $writeInFile1);
         // fclose($myfile);
-        $writeInFile .= file_get_contents('comments.html');
-        file_put_contents('comments.html', $writeInFile);
+        $writeInFile .= file_get_contents('comments.php');
+        file_put_contents('comments.php', $writeInFile);
         // echo 'File';
 
         //include("comments.html");
 
     }
-    include("comments.html");
+    // include("comments.html");
 
     // var_dump($writeInFile);
 
