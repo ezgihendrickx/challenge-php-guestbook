@@ -37,6 +37,7 @@
         <input type="submit" name="submit" id="submit" value="SUBMIT">
         <?php
         require_once 'footer.html';
+        require_once 'database.php';
         ?>
 
 
