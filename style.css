@@ -2,7 +2,6 @@ body {
   margin: 0px;
 }
 input {
-  color: lightgray;
   background-color: lightblue;
   width: 500px;
 }
@@ -14,7 +13,8 @@ input {
 
 input[type="submit"] {
   background-color: blue;
-  color: whitesmoke;
+  color: azure;
+
   width: 100px;
 }
 
